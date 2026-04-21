@@ -1,0 +1,142 @@
+.experience {
+    position: relative;
+    padding: 7rem 3rem;
+}
+
+.expGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.expItem {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2.5rem;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.expItem:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 179px;
+    top: 2rem;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--a1), rgba(167, 139, 250, .1));
+}
+
+.expLeft {
+    text-align: right;
+    padding-top: .35rem;
+}
+
+.expDate {
+    font-family: var(--font-m);
+    font-size: .72rem;
+    color: var(--a3);
+    letter-spacing: .06em;
+    line-height: 1.5;
+}
+
+.expType {
+    font-size: .68rem;
+    color: var(--text3);
+    font-family: var(--font-m);
+    margin-top: .25rem;
+}
+
+.expDotWrap {
+    position: absolute;
+    left: 170px;
+    top: .5rem;
+    z-index: 2;
+}
+
+.expDot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--a1), var(--a2));
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 20px var(--glow1);
+}
+
+.expRight {
+    padding-left: 1rem;
+}
+
+.expRole {
+    font-family: var(--font-h);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: .2rem;
+}
+
+.expCompany {
+    font-size: .9rem;
+    color: var(--a1);
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
+
+.expLoc {
+    font-size: .75rem;
+    color: var(--text3);
+    font-family: var(--font-m);
+    margin-bottom: .875rem;
+}
+
+:global(.exp-desc) {
+    font-size: .875rem;
+    color: var(--text2);
+    line-height: 1.8;
+}
+
+:global(.exp-desc) li {
+    margin-left: 1.25rem;
+    margin-bottom: .3rem;
+}
+
+.expPills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-top: 1rem;
+}
+
+.expPill {
+    font-size: .68rem;
+    font-family: var(--font-m);
+    padding: .2rem .65rem;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text3);
+}
+
+@media(max-width: 900px) {
+    .experience {
+        padding: 5rem 1.5rem;
+    }
+
+    .expItem {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+    }
+
+    .expLeft {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .expItem:not(:last-child)::after {
+        display: none;
+    }
+
+    .expDotWrap {
+        display: none;
+    }
+}

@@ -1,0 +1,44 @@
+.mqWrap {
+    overflow: hidden;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+}
+
+.mqTrack {
+    display: flex;
+    gap: 2.5rem;
+    white-space: nowrap;
+    animation: mq 22s linear infinite;
+    width: max-content;
+}
+
+.mqItem {
+    font-family: var(--font-m);
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: color .3s;
+}
+
+.mqItem:hover {
+    color: var(--a1);
+}
+
+.mqSep {
+    color: var(--a1);
+}
+
+@keyframes mq {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

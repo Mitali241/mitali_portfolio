@@ -1,0 +1,201 @@
+.about {
+    background: var(--bg2);
+    padding: 7rem 3rem;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.aboutCard {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.aboutCardInner {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.avatarRing {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--a1), var(--a2), var(--a3));
+    padding: 3px;
+    flex-shrink: 0;
+}
+
+.avatarInner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: var(--font-h);
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--surface) 60%, var(--surface2));
+}
+
+.avatarImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aboutName {
+    font-family: var(--font-h);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -.03em;
+}
+
+.aboutRole {
+    font-size: .85rem;
+    color: var(--a1);
+    font-family: var(--font-m);
+    letter-spacing: .04em;
+}
+
+.aboutLoc {
+    font-size: .8rem;
+    color: var(--text3);
+    font-family: var(--font-m);
+}
+
+.aboutStatsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+    width: 100%;
+}
+
+.astat {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.astatN {
+    font-family: var(--font-h);
+    font-size: 1.6rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--a1), var(--a2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.astatL {
+    font-size: .72rem;
+    color: var(--text3);
+    font-family: var(--font-m);
+    letter-spacing: .06em;
+}
+
+.aboutLinks {
+    display: flex;
+    gap: .75rem;
+    width: 100%;
+}
+
+.aboutLink {
+    flex: 1;
+    padding: .6rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    font-size: .8rem;
+    font-family: var(--font-m);
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.aboutLink:hover {
+    border-color: var(--a1);
+    color: var(--a1);
+    background: rgba(167, 139, 250, .08);
+}
+
+.aboutText p {
+    color: var(--text2);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+}
+
+.aboutText strong {
+    color: var(--a1);
+    font-weight: 600;
+}
+
+.eduCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.eduIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.eduName {
+    font-family: var(--font-h);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.eduDetail {
+    font-size: .8rem;
+    color: var(--text2);
+}
+
+.eduBadge {
+    font-size: .72rem;
+    font-family: var(--font-m);
+    color: var(--a3);
+    background: rgba(52, 211, 153, .1);
+    border: 1px solid rgba(52, 211, 153, .2);
+    padding: .15rem .6rem;
+    border-radius: 4px;
+    display: inline-flex;
+    margin-top: .35rem;
+}
+
+@media(max-width: 900px) {
+    .about {
+        padding: 5rem 1.5rem;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}

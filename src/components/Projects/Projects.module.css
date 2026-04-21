@@ -1,0 +1,232 @@
+.projects {
+    background: var(--bg2);
+    padding: 7rem 3rem;
+}
+
+.projFilter {
+    display: flex;
+    gap: .6rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.pfBtn {
+    padding: .4rem 1rem;
+    border-radius: 7px;
+    font-size: .75rem;
+    font-family: var(--font-m);
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all .3s;
+    letter-spacing: .04em;
+}
+
+.active,
+.pfBtn:hover {
+    background: var(--a1);
+    border-color: var(--a1);
+    color: #fff;
+}
+
+.projGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.75rem;
+}
+
+.projCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all .4s var(--ease);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.projCard:hover {
+    transform: translateY(-8px) rotateX(-2deg);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .4);
+    border-color: var(--border2);
+}
+
+.projThumb {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projThumbBg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    transition: transform .6s var(--ease);
+}
+
+.projCard:hover .projThumbBg {
+    transform: scale(1.08);
+}
+
+.projImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s var(--ease);
+}
+
+.projCard:hover .projImg {
+    transform: scale(1.08);
+}
+
+.projOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, var(--surface) 100%);
+}
+
+.projActions {
+    position: absolute;
+    top: .875rem;
+    right: .875rem;
+    display: flex;
+    gap: .4rem;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: all .35s var(--ease);
+}
+
+.projCard:hover .projActions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projAction {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: .9rem;
+    text-decoration: none;
+    transition: background .2s;
+    cursor: pointer;
+}
+
+.projAction:hover {
+    background: var(--a1);
+}
+
+.projBody {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.projTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-bottom: .875rem;
+}
+
+.projTag {
+    font-size: .68rem;
+    font-family: var(--font-m);
+    padding: .15rem .55rem;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text3);
+}
+
+.projName {
+    font-family: var(--font-h);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: .5rem;
+}
+
+.projDesc {
+    font-size: .855rem;
+    color: var(--text2);
+    line-height: 1.7;
+}
+
+.projDesc ul {
+    list-style: disc;
+    margin-left: 1.25rem;
+}
+
+.projDesc li {
+    margin-bottom: .25rem;
+}
+
+.projFoot {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projStatus {
+    font-size: .7rem;
+    font-family: var(--font-m);
+    color: var(--a3);
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.projStatus::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--a3);
+    animation: pulse 2s infinite;
+}
+
+.projType {
+    font-size: .68rem;
+    font-family: var(--font-m);
+    color: var(--text3);
+    padding: .15rem .6rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .4;
+        transform: scale(.8);
+    }
+}
+
+@media(max-width: 900px) {
+    .projects {
+        padding: 5rem 1.5rem;
+    }
+}

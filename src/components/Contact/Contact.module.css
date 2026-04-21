@@ -1,0 +1,162 @@
+.contact {
+    background: var(--bg2);
+    padding: 7rem 3rem;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.contactInfoText h3 {
+    font-family: var(--font-h);
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: -.04em;
+    margin-bottom: .875rem;
+}
+
+.contactInfoText p {
+    font-size: .975rem;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.contactChips {
+    display: flex;
+    flex-direction: column;
+    gap: .875rem;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .9rem 1.1rem;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: all .3s var(--ease);
+}
+
+.chip:hover {
+    border-color: var(--a1);
+    background: var(--surface2);
+    transform: translateX(5px);
+}
+
+.chipIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.chipLabel {
+    font-size: .7rem;
+    color: var(--text3);
+    font-family: var(--font-m);
+}
+
+.chipVal {
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.cform {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.formRow2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.flabel {
+    font-size: .72rem;
+    color: var(--text2);
+    font-family: var(--font-m);
+    letter-spacing: .05em;
+    display: block;
+    margin-bottom: .4rem;
+}
+
+.finput,
+.ftextarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    color: var(--text);
+    font-family: var(--font-b);
+    font-size: .9rem;
+    outline: none;
+    transition: border-color .3s, box-shadow .3s;
+    resize: none;
+}
+
+.finput:focus,
+.ftextarea:focus {
+    border-color: var(--a1);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, .12);
+}
+
+.ftextarea {
+    height: 130px;
+}
+
+.csend {
+    width: 100%;
+    padding: .95rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--a1), var(--a2));
+    color: #fff;
+    font-weight: 700;
+    font-size: .95rem;
+    font-family: var(--font-b);
+    border: none;
+    cursor: pointer;
+    transition: transform .3s var(--ease), box-shadow .3s;
+    box-shadow: 0 0 40px var(--glow1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.csend:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 50px var(--glow1);
+}
+
+.ok {
+    background: linear-gradient(135deg, #059669, var(--a3));
+}
+
+@media(max-width: 900px) {
+    .contact {
+        padding: 5rem 1.5rem;
+    }
+
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .formRow2 {
+        grid-template-columns: 1fr;
+    }
+}

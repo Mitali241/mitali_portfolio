@@ -1,0 +1,242 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cursor Styles */
+.cursorDot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: var(--a1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+}
+
+.cursorRing {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--a1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+  transition: width .3s var(--ease), height .3s var(--ease), border-color .3s, opacity .3s;
+}
+
+/* Nav Styles */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  transition: all .4s;
+}
+
+.nav.scrolled {
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: var(--font-h);
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -.04em;
+  position: relative;
+}
+
+.logo span {
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-family: var(--font-m);
+  position: relative;
+  transition: color .3s;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--a1), var(--a2));
+  transition: width .3s var(--ease);
+}
+
+.navLinks a:hover {
+  color: var(--text);
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: .875rem;
+}
+
+.themeToggle {
+  width: 46px;
+  height: 24px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: background .3s;
+  flex-shrink: 0;
+}
+
+.themeToggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+  transition: transform .3s var(--ease);
+}
+
+:global([data-theme="light"]) .themeToggle::after {
+  transform: translateX(22px);
+}
+
+.resumeLink {
+  padding: .45rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-m);
+  font-size: .75rem;
+  cursor: pointer;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: all .3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.resumeLink:hover {
+  background: var(--surface2);
+  border-color: var(--a1);
+  color: var(--a1);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+}
+
+/* Footer Styles */
+.footer {
+  padding: 2.5rem 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.fLogo {
+  font-family: var(--font-h);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+}
+
+.fLogo span {
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fText {
+  font-size: .78rem;
+  color: var(--text3);
+  font-family: var(--font-m);
+}
+
+.fSocials {
+  display: flex;
+  gap: .6rem;
+}
+
+.fSoc {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  text-decoration: none;
+  font-family: var(--font-m);
+  font-size: .72rem;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.fSoc:hover {
+  border-color: var(--a1);
+  color: var(--a1);
+  background: rgba(167, 139, 250, .08);
+}
+
+@media(max-width: 900px) {
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .footer {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
