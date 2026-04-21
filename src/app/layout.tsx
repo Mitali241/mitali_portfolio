@@ -25,7 +25,7 @@ const bricolage = Bricolage_Grotesque({
 // If it's not there, I'll use Bricolage for headings as well or a similar font.
 
 export const metadata: Metadata = {
-  title: "Premium Next.js App",
+  title: "Mitali Full Stack Developer",
   description: "Organised with a separate structure component",
 };
 
